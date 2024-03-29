@@ -59,9 +59,13 @@ async def create_item(request: Request):
 # 主函数入口
 if __name__ == '__main__':
     # 加载预训练的分词器和模型
-    tokenizer = AutoTokenizer.from_pretrained("/root/autodl-tmp/qwen/Qwen-7B-Chat", trust_remote_code=True)
-    model = AutoModelForCausalLM.from_pretrained("/root/autodl-tmp/qwen/Qwen-7B-Chat", device_map="auto", trust_remote_code=True).eval()
-    model.generation_config = GenerationConfig.from_pretrained("/root/autodl-tmp/qwen/Qwen-7B-Chat", trust_remote_code=True) # 可指定
+    # tokenizer = AutoTokenizer.from_pretrained("/root/autodl-tmp/qwen/Qwen-7B-Chat", trust_remote_code=True)
+    # model = AutoModelForCausalLM.from_pretrained("/root/autodl-tmp/qwen/Qwen-7B-Chat", device_map="auto", trust_remote_code=True).eval()
+    # model.generation_config = GenerationConfig.from_pretrained("/root/autodl-tmp/qwen/Qwen-7B-Chat", trust_remote_code=True) # 可指定
+    tokenizer = AutoTokenizer.from_pretrained("/home/wm/code/self-llm/Qwen/mycode/qwen/Qwen-7B-Chat", trust_remote_code=True)
+    model = AutoModelForCausalLM.from_pretrained("/home/wm/code/self-llm/Qwen/mycode/qwen/Qwen-7B-Chat", device_map="auto", trust_remote_code=True).eval()
+    model.generation_config = GenerationConfig.from_pretrained("/home/wm/code/self-llm/Qwen/mycode/qwen/Qwen-7B-Chat", trust_remote_code=True) # 可指定
+
     model.eval()  # 设置模型为评估模式
     # 启动FastAPI应用
     # 用6006端口可以将autodl的端口映射到本地，从而在本地使用api
