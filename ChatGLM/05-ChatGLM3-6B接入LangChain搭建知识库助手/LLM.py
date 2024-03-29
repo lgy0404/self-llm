@@ -8,6 +8,7 @@
 @Contact :   loganzou0421@163.com
 @License :   (C)Copyright 2017-2018, Liugroup-NLPR-CASIA
 @Desc    :   将本地部署的 ChatGLM3-6B 封装为自定义 LLM
+测试更改
 '''
 
 from langchain.llms.base import LLM
